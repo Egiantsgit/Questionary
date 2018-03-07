@@ -1,0 +1,8 @@
+<div *ngIf="!toggleButton">
+  <h1>Start Your Assignment</h1>
+  <button (click)="display()" >Start</button>
+</div>
+
+<div *ngIf="toggleButton">
+  <app-assessment></app-assessment>
+</div>

@@ -1,0 +1,11 @@
+<button (click)="nextQuestion(-1)">Back</button>
+
+<div>
+  <p>{{getQuestion()}}</p>
+  <ul>
+    <li (click)="selectOption(option.score)" *ngFor="let option of options">{{option.option}}</li>
+  </ul>
+</div>
+
+<button (click)="nextQuestion(1)" >Next</button>
+

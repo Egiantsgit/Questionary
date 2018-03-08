@@ -1,11 +1,26 @@
-<button (click)="nextQuestion(-1)">Back</button>
-
-<div>
-  <p>{{getQuestion()}}</p>
-  <ul>
-    <li (click)="selectOption(option.score)" *ngFor="let option of options">{{option.option}}</li>
-  </ul>
+<div class="container">
+  <div class="row">
+    <a [style.visibility]="(page !== 0 && !showResultsPage) ? 'visible': 'hidden'" (click)="nextQuestion(-1)"> <img src="../../assets/Images/prev.jpg" alt="back"/></a>
+  </div>
+  <div class="row margin">
+    <div class="col-lg-12">
+      <div *ngIf="!showResultsPage">
+        <div>
+          <p>{{getQuestion()}}</p>
+          <button (click)="selectOption(option.score)" *ngFor="let option of options" class="btn btn-primary btn-lg options" type="submit">{{option.option}}</button>
+        </div>
+      </div>
+      <div *ngIf="showResultsPage">
+        <p>Congratulations!!</p>
+        <h1>Your score is {{totalScore}}</h1>
+      </div>
+    </div>
+  </div>
+  <div [style.visibility]="(!showResultsPage) ? 'visible': 'hidden'" class="row margin">
+    <button [ngClass]="{'disabled': page === 3}" type="button" class="btn btn-primary submit" (click)="nextQuestion(1)" >Next</button>
+    <button type="button" class="btn btn-primary submit" *ngIf="page === 3" (click)="showResultsPage=true">Submit</button>
+  </div>
 </div>
 
-<button (click)="nextQuestion(1)" >Next</button>
+
 

@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 
 import {RouterModule} from '@angular/router';
 import {AssessmentComponent} from './assesment/assessment.component';
+import {QuestionsService} from "./questions.service";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -15,11 +17,12 @@ import {AssessmentComponent} from './assesment/assessment.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {path: 'assessment', component: AssessmentComponent}
     ]),
   ],
-  providers: [],
+  providers: [ HttpClient, QuestionsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

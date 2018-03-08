@@ -1,0 +1,19 @@
+.options {
+  padding: 18px 55px;
+  font-size: 19px;
+  margin-left: 98px;
+}
+
+.margin {
+  margin-top: 40px;
+}
+
+p {
+  text-align: center;
+  font-size: 43px;
+  font-weight: bold;
+}
+
+.submit {
+  padding: 6px 17px;
+}

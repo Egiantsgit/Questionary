@@ -7,8 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public toggleButton = false;
-
-  display() {
-    this.toggleButton = true;
-  }
 }
